@@ -43,6 +43,7 @@ class DishController extends AbstractController
      */
     public function create(Request $request, ObjectManager $manager): Response
     {   
+        $dish = new Dish;
         $form = $this->createForm(DishType::class);
         $form->handleRequest($request);
 
