@@ -1,0 +1,155 @@
+
+
+/* CUSTOM STYLES
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+img {
+	max-width: 100%;
+}
+
+.sorting,
+.dishes {
+	margin: 8px 0 0 0;
+}
+
+.sorting {
+	font-size: 0;
+	margin-bottom: 15px;
+}
+
+.sorting button {
+	outline: none;
+	margin: 15px;
+	width: 50%;
+	height: auto;
+	font-weight: bold;
+	background-color:transparent;
+	display:inline-block;
+	cursor:pointer;
+	font-size:15px;
+	padding:9px 0 9px 0;
+	text-decoration:none;
+	border-top: 0;
+  border-right: 0;
+  border-left: 0;
+}
+	
+.sorting button:hover {
+	background-color:transparent;
+	border-bottom:2px solid #ff0000;
+}
+
+.sorting button.active {
+	position:relative;
+	border-bottom:2px solid #ff0000;
+}
+
+.dishes {
+	margin-bottom: 15px;
+	font-size: 0;
+	background: whitesmoke;
+}
+
+.dishes .card {
+	text-align: center;
+	font-size: 14px;
+	display: inline-block;
+	min-width: 20%;
+	margin: 2% 2%;
+}
+
+.dishes a {
+	display: block;
+	height: 60px;
+	margin: 15px 0;
+	padding-top: 12.5px;
+	background: whitesmoke;
+	color: black;
+	border: 1px solid white;
+	-webkit-transition: all .4s ease;
+	        transition: all .4s ease;
+}
+
+.dishes a:hover {
+	background: #99cfe0;
+}
+
+.dishes .mix-target {
+	display: none;
+}
+
+.p, .p a {
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  text-align: center;
+}
+
+.card-text {
+	font-size: 12px;
+}
+
+
+/* MEDIA QUERIES STYLES
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+@media only screen and (min-width: 350px) {
+
+	.img-section{
+		display: none;
+	}
+	
+}
+
+@media only screen and (min-width: 750px) {
+
+	.container {
+		width: 95%;
+	}
+
+	.dishes a {
+		background: #EBEBEB;
+		border: none;
+	}
+
+	.dishes a:hover {
+		background: #EBEBEB;
+		-webkit-transform: scale(1.15);
+		    -ms-transform: scale(1.15);
+		        transform: scale(1.15);
+	}
+
+	h4 {
+		width: 50%;
+		margin-top: 12px;
+	}
+
+	img {
+		margin-bottom: 15px;
+	}
+
+	.sorting {
+		margin-bottom: 0;
+	}
+
+	.sorting button {
+		width: 10%;
+		margin: 15px;
+		
+	}
+
+	.dishes .card {
+		max-width: 20%
+	}
+
+	.img-section{
+		display: block;
+	}
+
+}
+
+@media only screen and (min-width: 1024px) {
+
+	img {
+		margin-bottom: 0;
+	}
+
+}

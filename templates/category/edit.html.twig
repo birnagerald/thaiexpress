@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Édition d'une catégorie{% endblock %}
+
+{% block body %}
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <div class="bg-light py-3 px-3">
+                <h1 class="my-5">Modification d'une catégorie</h1>
+                {{ form_start(form) }}
+                <div class="row">
+                    <div class="col">
+                        <div class="alert alert-light">
+                            <h2 class="alert-heading">Information sur la catégorie</h2>
+                            <hr> 
+                            {{ form_row(form.name) }}
+                            <h2 class="alert-heading">Confirmation</h2>
+                            <hr>
+                            <button type="submit" class="btn btn-success">
+                                <i class="fas fa-check"></i> 
+                                Modifier !
+                            </button>
+                        </div>   
+                    </div>
+                </div>
+                {{ form_end(form) }}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

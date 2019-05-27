@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Administration des plats{% endblock %}
+
+{% block body %}
+<div class="container-fluid">
+    <h1 class="my-5">Gestion des plats</h1>
+
+    <table class="table table-over">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nom</th>
+                <th>Image</th>
+                <th>Prix</th>
+                <th>Catégorie</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for dish in paginator.data %}
+            <tr>
+                <td>{{dish.id}}</td>
+                <td>{{dish.name}}</td>
+                <td>
+                    {% if dish.image.name is defined %}
+                    <img src="{{ asset('images/upload/')~ dish.image.name }}" alt="Avatar de {{dish.name}}" class="dish-admin-thumb mr-2">
+                    {% else %}
+                    <p>Pas de maniature</p>
+                    {% endif %}
+                </td>
+                <td>{{dish.price | number_format(2,',', ' ')}}&euro;</td>
+                <td>{{dish.category.name}}</td>
+                <td>
+                    <a href="{{ path('admin_dish_edit', {'id': dish.id}) }}" class="btn btn-primary"><i class="fas fa-edit"></i></a>
+                    <a href="{{ path('admin_dish_delete', {'id': dish.id}) }}" class="btn btn-danger"><i class="fas fa-trash"></i></a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+<a href="{{ path('admin_dish_create') }}"><button class="btn btn-primary mb-3">Ajouter un plats</button></a>
+    {{ paginator.display() }}
+</div>
+{% endblock %}

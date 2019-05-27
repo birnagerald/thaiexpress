@@ -1,0 +1,105 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div id="top" class="starter_container bg">
+        <div class="follow_container">
+            <div class="col-md-6 col-md-offset-3">
+            </div>
+        </div>
+    </div>
+
+    <section id="story" class="description_content">
+        <div class="text-content container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h1>Qui sommes-nous ?</h1>
+                    <div><img src="images/ico/317652-200.png"></div>
+                    <p class="desc-text">Nous sommes un restaurant familial ouvert en 2006 à Bordeaux, notre vocation est de
+                        vous y servir diverses variétés asiatique à petit prix ! N'hésitez pas à faire votre réservation ou
+                        à venir sur place, nous serons ravis de vous servir !</p>
+                </div>
+                <div class="col-md-6">
+                    <div class="img-section">
+                        <img src="images/kabob.jpg" width="250" height="220">
+                        <img src="images/limes.jpg" width="250" height="220">
+                        <div class="img-section-space"></div>
+                        <img src="images/radish.jpg" width="250" height="220">
+                        <img src="images/corn.jpg" width="250" height="220">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="plats" class="description_content">
+        <div class="plats background_content">
+            <h1>Plats</h1>
+        </div>
+        
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="sorting">
+                            <button class="filter-btn" data-filter="all">All</button>
+                            <button class="filter-btn" data-filter=".Plats">Plats</button>
+                            <button class="filter-btn" data-filter=".Entrée">Entrée</button>
+                            <button class="filter-btn" data-filter=".Dessert">Dessert</button>
+                            <button class="filter-btn" data-filter=".Boisson">Boisson</button>
+                        </div>
+                    </div>
+                </div><!-- end of row -->
+                <div class="row">
+                <div class="col">
+                    <div class="dishes" id="mix-wrapper">
+                        {% for dish in dishes %}
+                        <div class="mix-target {{dish.category.name}} card">
+                            <img src="{{ asset('images/upload/')~ dish.image.name }}" alt="Food">
+                            <div class="card-body">
+                                <h2 class="card-text black">{{dish.name}}<br>{{dish.price | number_format(2,',', ' ')}}&euro;</h2>
+                            </div> 
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                </div><!-- end of row -->   
+            </div>
+    </section>
+
+    <section id="contact" class=" description_content">
+        <div class="bread background_content">
+            <h1>Contact</h1>
+        </div>
+        <div class="text-content container">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="right-text">
+                            <h2>Pour réserver</h2>
+                            <hr>
+                            <p>Numéro de téléphone : XXXX.XXX.XXX</p>
+                        </div>
+                    </div> 
+                    <div class="col">
+                        <div class="right-text">
+                            <h2>Horaires d'ouverture</h2>
+                            <hr>
+                            <p>Lundi et Mardi : 9:30 - 23:30 </p>
+                            <p>Mercredi : 10:00 - 21:00 </p>
+                            <p>Jeudi : 12:00 - 17:00 </p>
+                            <p>Vendredi : 10:00 - 22:00 </p>
+                            <p>Samedi : 11:30 - 00:00 </p>
+                        </div>
+                    </div>               
+                </div>
+            </div>
+        </div>
+        <div class="iframecontent">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d5658.686560320819!2d-0.573849!3d44.834942!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd5527c604f28dad%3A0x404f64f4d342a346!2s185+Rue+Sainte-Catherine%2C+33000+Bordeaux!5e0!3m2!1sfr!2sfr!4v1557882623349!5m2!1sfr!2sfr" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+        </div>
+    </section>
+    
+{% endblock %}
+{% block javascripts %}
+<script src="https://cdn.jsdelivr.net/jquery.mixitup/latest/jquery.mixitup.min.js"></script>
+{{ encore_entry_script_tags('main') }}
+{% endblock %}
