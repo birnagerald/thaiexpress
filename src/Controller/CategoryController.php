@@ -45,7 +45,7 @@ class CategoryController extends AbstractController
     public function create(Request $request, ObjectManager $manager): Response
     {   
         $category = new Category;
-        $form = $this->createForm(CategoryType::class);
+        $form = $this->createForm(CategoryType::class, $category);
 
         $form->handleRequest($request);
 
